@@ -8,6 +8,7 @@ use AdamWathan\Form\Elements\Checkbox;
 use AdamWathan\Form\Elements\Date;
 use AdamWathan\Form\Elements\DateTimeLocal;
 use AdamWathan\Form\Elements\Email;
+use AdamWathan\Form\Elements\Number;
 use AdamWathan\Form\Elements\File;
 use AdamWathan\Form\Elements\FormOpen;
 use AdamWathan\Form\Elements\Hidden;
@@ -110,6 +111,17 @@ class FormBuilder
         }
 
         return $email;
+    }
+
+    public function number($name)
+    {
+        $number = new Number($name);
+
+        if ($value = $this->getValueFor($name) !== null)) {
+            $number->value($value);
+        }
+
+        return $number;
     }
 
     public function hidden($name)
