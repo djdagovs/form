@@ -117,7 +117,7 @@ class FormBuilder
     {
         $number = new Number($name);
 
-        if ($value = $this->getValueFor($name) !== null)) {
+        if ($value = $this->getValueFor($name) !== null) {
             $number->value($value);
         }
 
